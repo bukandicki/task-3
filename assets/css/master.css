@@ -1,0 +1,52 @@
+.table-container {
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.product {
+    padding: 1em;
+}
+
+#cash input {
+    border: none;
+    font-size: 1.2em;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+#product-cart {
+    visibility: hidden;
+}
+
+.show {
+    visibility: visible !important;
+}
+
+.hidden {
+    visibility: hidden !important;
+}
+
+table, td, th {
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+}
+
+table th {
+    text-transform: capitalize;
+    background-color: rgb(38, 38, 38);
+    color: white;
+}
+
+th, td {
+    padding: 15px;
+}
+
+h4 {
+    text-align: center;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/master.css">
+</head>
+<body>
+    <h1>Total : <span id="total-price"></span></h1>
+    <div class="table-container">
+        <table id="product-list">
+            <tr>
+                <th>no</th>
+                <th>kode produk</th>
+                <th>nama produk</th>
+                <th>harga</th>
+                <th>sisa stock</th>
+                <th>aksi</th>
+            </tr>
+            <tr data-product-item="123">
+                <td>1</td>
+                <td>
+                    <label for="product-id">123</label>
+                    <input type="hidden" class="product-id" value="123">
+                </td>
+                <td>
+                    <label for="product-name">Ayam Bakar</label>
+                    <input type="hidden" class="product-name" value="Ayam Bakar">
+                </td>
+                <td>
+                    <label for="product-price">Rp32000</label>
+                    <input type="hidden" class="product-price" value="32000">
+                </td>
+                <td>
+                    <label for="product-stock">2</label>
+                    <input type="hidden" class="product-stock" value="2">
+                </td>
+                <td><button class="beli" id="123">BELI</button></td>
+            </tr>
+            <tr data-product-item="534">
+                <td>2</td>
+                <td>
+                    <label for="product-id">534</label>
+                    <input type="hidden" class="product-id" value="534">
+                </td>
+                <td>
+                    <label for="product-name">Bakso Goreng</label>
+                    <input type="hidden" class="product-name" value="Bakso Goreng">
+                </td>
+                <td>
+                    <label for="product-price">Rp12000</label>
+                    <input type="hidden" class="product-price" value="12000">
+                </td>
+                <td>
+                    <label for="product-stock">9</label>
+                    <input type="hidden" class="product-stock" value="9">
+                </td>
+                <td><button class="beli" id="534">BELI</button></td>
+            </tr>
+            <tr class="column" data-product-item="647">
+                <td>3</td>
+                <td>
+                    <label for="product-id">647</label>
+                    <input type="hidden" class="product-id" value="647">
+                </td>
+                <td>
+                    <label for="product-name">Seblak Pedas</label>
+                    <input type="hidden" class="product-name" value="Seblak Pedas">
+                </td>
+                <td>
+                    <label for="product-price">Rp8000</label>
+                    <input type="hidden" class="product-price" value="8000">
+                </td>
+                <td>
+                    <label for="product-stock">4</label>
+                    <input type="hidden" class="product-stock" value="4">
+                </td>
+                <td><button class="beli" id="647">BELI</button></td>
+            </tr>
+            <tr id="cash">
+                <td colspan="6"><input type="text" placeholder="Masukan jumlah uang" id="user-money"><button disabled id="done">SELESAI</button></td>
+            </tr>
+        </table>
+        <table id="cart">
+            <tr>
+                <th>no</th>
+                <th>kode produk</th>
+                <th>nama produk</th>
+                <th>harga</th>
+                <th>kuantitas</th>
+                <th>total</th>
+                <th>aksi</th>
+            </tr>
+            <tr id="emptycart">
+                <td colspan="7"><h4>Anda belum menambahkan produk</h4></td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="assets/js/jquery-3.5.1.min.js"></script>
+    <script src="assets/js/master.js"></script>
+</body>
+</html>
