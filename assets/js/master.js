@@ -14,7 +14,7 @@ $(document).ready(function () {
             total_cart += parseInt(GetInfoProduct('product-price'))
 
         $("#total-price").attr("data-grand-total", total_cart)
-        $("#total-price").text(total_cart)
+        $("#total-price").text('Rp'+total_cart)
 
         
         function Numbering($table)
@@ -68,21 +68,6 @@ $(document).ready(function () {
             var appendSpan = $('#cart').append(appendTD);
             return appendSpan
         }
-
-        // function TotalingAllPrice()
-        // {
-        //     var arr = []
-        //     $("#cart").find("[data-cart-item]").each(function (index, elemen) {
-        //         arr.push($(elemen).find("label.total").attr("data-price-total"))
-        //         var n = arr.length,
-        //             sum = 0;
-        //         while(n--)
-        //         sum += parseFloat(arr[n])
-        //         $("#total-price").attr("data-grand-total", sum)
-        //         $("#total-price").text(sum)
-                
-        //     })
-        // }
         
         if (cart_item == 0)
         {
@@ -99,8 +84,6 @@ $(document).ready(function () {
             $('.qty'+id).val(Quantity());
             TotalingRow()
         }
-
-        // TotalingAllPrice()
     });
 
     $("body").on("click", ".hapus", function () {
@@ -113,7 +96,7 @@ $(document).ready(function () {
         total_cart -= parseInt(total_price)
 
         $("#total-price").attr("data-grand-total", total_cart)
-        $("#total-price").text(total_cart)
+        $("#total-price").text('Rp'+total_cart)
 
         $('.hapus#' + id).closest('tr').remove()
 
