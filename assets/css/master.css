@@ -15,6 +15,10 @@
     border: 1px solid #ddd;
 }
 
+button {
+    cursor: pointer;
+}
+
 #product-cart {
     visibility: hidden;
 }
