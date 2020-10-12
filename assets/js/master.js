@@ -1,7 +1,5 @@
 $(document).ready(function () {
     
-
-    
     $(".beli").click(function (e) {
         e.preventDefault();
         
@@ -51,7 +49,7 @@ $(document).ready(function () {
                                     '<input class="qty' + GetInfoProduct('product-id') + '" type="hidden" value="0">' +
                                 '</td>' +
                                 '<td>' +
-                                    '<label class="total' + id + '" data-price-total=""></label>' +
+                                    '<label class="total total' + id + '" data-price-total=""></label>' +
                                 '</td>' +
                                 '<td><button class="hapus" id="">HAPUS</button></td>' +
                             '</tr>'
@@ -61,8 +59,16 @@ $(document).ready(function () {
         }
 
         function TotalingAllPrice() {
+            var arr = []
             $("#cart").find("[data-cart-item]").each(function () {
-                $("#total-price").html(parseInt($(this).find("label.total"+id).attr("data-price-total")))
+                arr.push($(this).find("label.total").attr("data-price-total"))
+                var n = arr.length,
+                    sum = 0;
+                while(n--)
+                sum += parseFloat(arr[n])
+                $("#total-price").attr("data-grand-total", sum)
+                $("#total-price").text(sum)
+                
             })
         }
         
@@ -79,21 +85,40 @@ $(document).ready(function () {
             $('.qty'+id).val(Quantity());
             TotalingRow()
         }
-        
+
         TotalingAllPrice()
 
         $(".hapus").click(function () {
-            var c = $('#cart').find('[data-cart-item="' + id + '"').find('span.total' + id);
-            console.log(c)
+            var id = $(this).attr('id');
+
             if(cart_item == 0){
                 $("#done").attr('disabled', true)
             }else{
                 $("#done").attr('disabled', false)
             }
-            var id = $(this).attr('id');
-            // $('.hapus#' + id).closest('tr').remove();
+
+            $('.hapus#' + id).closest('tr').remove();
+
+            a = $('.hapus#' + id).closest('tr').find("[data-cart-item]");
+            console.log(a,$("#total-price").attr("data-grand-total"))
         });
     });
 
+    $('#done').click(function () {
+        var money = parseInt($("#user-money").val()),
+            grand_total = parseInt($("#total-price").attr("data-grand-total")),
+            totaling = money - grand_total
+
+            if (money < grand_total){
+                alert("Maaf Uang Anda Kurang Rp" + totaling.toString().substring(1))
+            }else if (money == grand_total){
+                alert("Terimakasih")
+            }else{
+                alert("Kembalian Anda Rp" + totaling)
+            }
+
+        
+
+    })
 
 });
